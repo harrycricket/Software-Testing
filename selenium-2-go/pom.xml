@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.harry</groupId>
+    <artifactId>selenium-2-go</artifactId>
+    <version>1.0</version>
+    <packaging>jar</packaging>
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>16</maven.compiler.source>
+        <maven.compiler.target>16</maven.compiler.target>
+        <exec.mainClass>com.harry.selenium.main.Selenium2Go</exec.mainClass>
+    </properties>
+    <dependencies>
+        <!-- Hầu hết mọi project Maven thì mục dependencies là mục cần edit, add thêm 
+        còn mục build thì ít khi dùng đến trừ phần khai báo jar war plugin 
+        Mục dependencies chứa khai báo đến các thư viện .jar ta cần cho viết code, 
+        tức là cần để ta import vào trong file .java. Ví dụ ta khai báo thư viện/ dependency Selenium 
+        thì ta sẽ có trong tay các class tên là: WebDriver, ChromeDriver, WebElement, By...
+        để viết code để tự động chạy trình duyệt, mở app, click, input như ma nhập. Tức đây là các class 
+        điều khiển trình duyệt qua các method() dấu chấm gọi hàm của OOP
+        -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>4.10.0</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.3.0</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>       
+            </plugin>
+        </plugins>
+    </build>
+</project>
