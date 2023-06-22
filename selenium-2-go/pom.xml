@@ -19,11 +19,24 @@
         thì ta sẽ có trong tay các class tên là: WebDriver, ChromeDriver, WebElement, By...
         để viết code để tự động chạy trình duyệt, mở app, click, input như ma nhập. Tức đây là các class 
         điều khiển trình duyệt qua các method() dấu chấm gọi hàm của OOP
+        99% modify pom.xml rơi vào add <dependency>
+        1% rơi vào mục <plugin>
+        <dependency> dành cho dân dev khai báo thư viện xài trong code
+        <build>, <plugin> dành cho maven để nó chạy, làm việc gì đó surefire plugin dành cho maven hiển thị xanh đỏ
+        junit, jupiter <dependency> dành cho dev để assert()
+        selenium, lombok, jdbc, gson, jackson, rest api, spring boot, là <dependency>
         -->
         <dependency>
             <groupId>org.seleniumhq.selenium</groupId>
             <artifactId>selenium-java</artifactId>
             <version>4.10.0</version>
+        </dependency>
+        
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.9.3</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>
@@ -33,6 +46,7 @@
                 <artifactId>maven-jar-plugin</artifactId>
                 <version>3.3.0</version>
             </plugin>
+            
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>

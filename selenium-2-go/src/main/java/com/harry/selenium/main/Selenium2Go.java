@@ -4,6 +4,8 @@
 
 package com.harry.selenium.main;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -67,5 +69,11 @@ public class Selenium2Go {
         WebElement searchBox = myBrowser.findElement(By.name("q"));
         searchBox.sendKeys("Bird land");
         searchBox.submit();
+        try {
+            Thread.sleep(5000);
+        } catch (InterruptedException ex) {
+            Logger.getLogger(Selenium2Go.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        myBrowser.quit();
     }
 }
